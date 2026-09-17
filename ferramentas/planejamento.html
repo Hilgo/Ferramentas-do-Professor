@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planejamento de aula | Ferramentas do Professor</title>
+    <link rel="icon" type="image/png" href="../assets/icons/Icone Ferramentas do Professor.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,6 +13,38 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../detalhes.css">
+    <style>
+        .info-panel {
+            margin-top: 28px;
+            padding: 22px 20px 18px;
+            background: #edf5f0;
+            border-left: 5px solid var(--orange);
+        }
+
+        .info-panel h2 {
+            font: 700 30px/1.05 Fraunces, serif;
+            letter-spacing: -.04em;
+            margin: 0 0 10px;
+        }
+
+        .info-panel p {
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .info-panel ul {
+            margin: 12px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .info-panel {
+                padding: 18px 14px 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,20 +52,33 @@
                 class="brand-mark">✦</span><span>Ferramentas<br><strong>do Professor</strong></span></a></header>
     <main class="detail"><a class="back" href="../index.html#ferramentas">← Todas as ferramentas</a>
         <p class="eyebrow">03 · PLANEJAMENTO DE AULA</p>
-        <h1>Um ponto de partida para suas aulas.</h1>
-        <p>Uma ferramenta para automatizar etapas do planejamento de aula. Ela organiza uma primeira estrutura para que
-            você possa dedicar seu tempo às escolhas pedagógicas e às necessidades da turma.</p>
+        <h1>Planejamento semanal para o Ensino Médio Técnico.</h1>
+        <p>Essa ferramenta foi pensada para o contexto do <strong>Ensino Médio Técnico</strong>, seguindo os escopos e sequências dos cursos técnicos e organizando o trabalho em uma lógica semanal, como a plataforma da Educação Profissional.</p>
+        <p>A ideia foi agilizar o planejamento de aula. Em vez de começar do zero a cada semana, o recurso ajuda a montar uma base organizada para o professor adaptar à turma e ao contexto real da aula.</p>
+
         <section class="detail-box detail-coral">
             <div>
-                <h2>Planeje e personalize</h2>
-                <p>Abra a ferramenta, preencha as informações da sua aula e adapte o resultado à sua realidade. O
-                    planejamento é seu — ela entra para facilitar o caminho.</p>
+                <h2>Como funciona</h2>
+                <p>O projeto usa um modelo do Word para o planejamento de aula e uma mala direta com dados de uma planilha. A ideia é gerar uma estrutura pronta de forma mais rápida e menos repetitiva.</p>
+                <p>Para isso, você precisa de uma planilha de grade horária com campos como <strong>Dia</strong> (Seg, Ter, Qua, Qui, Sex), <strong>Horário</strong>, <strong>Turma</strong> e <strong>Disciplina</strong>, além dos arquivos de escopo-sequência para cada ano e um arquivo de configuração em JSON.</p>
+                <p>O resultado do processamento é uma planilha com várias colunas contendo os dados das aulas da semana, pronta para ser usada como base para gerar o planejamento.</p>
+                <p><a href="https://github.com/Hilgo/Automatizar-Planejamento-de-Aula#automatizar-planejamento-de-aula" target="_blank" rel="noopener">Veja a documentação completa do projeto no GitHub ↗</a></p>
             </div>
             <div class="detail-actions"><a class="button button-primary"
                     href="https://automatizar-planejamento-de-aula.onrender.com/" target="_blank" rel="noopener">Abrir
                     planejamento ↗</a><a class="secondary-link"
                     href="https://github.com/Hilgo/Automatizar-Planejamento-de-Aula" target="_blank" rel="noopener">Ver
                     projeto no GitHub ↗</a></div>
+        </section>
+
+        <section class="info-panel">
+            <h2>Sobre a mala direta no Word</h2>
+            <p>Para criar esse tipo de documento, o processo usa a funcionalidade de mala direta do Word com uma planilha Excel como fonte de dados. Isso permite que cada linha da planilha vire um bloco de conteúdo do documento, como uma aula ou uma sequência de planejamento.</p>
+            <ul>
+                <li><a href="https://support.microsoft.com/pt-br/word/mail-merge-using-an-excel-spreadsheet" target="_blank" rel="noopener">Microsoft: mala direta usando uma planilha do Excel ↗</a></li>
+                <li><a href="https://support.microsoft.com/pt-br/word/prepare-your-excel-data-source-for-a-word-mail-merge" target="_blank" rel="noopener">Microsoft: preparar a fonte de dados do Excel para mala direta no Word ↗</a></li>
+            </ul>
+
         </section>
     </main>
     <footer><a class="brand" href="../index.html"><span class="brand-mark">✦</span><span>Ferramentas<br><strong>do

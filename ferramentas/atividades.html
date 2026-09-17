@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendências de atividades | Ferramentas do Professor</title>
+    <link rel="icon" type="image/png" href="../assets/icons/Icone Ferramentas do Professor.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,6 +13,58 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../detalhes.css">
+    <style>
+        .image-panel {
+            margin-top: 28px;
+            padding: 22px 20px 18px;
+            background: #edf5f0;
+            border-left: 5px solid var(--orange);
+        }
+
+        .image-panel h2 {
+            font: 700 30px/1.05 Fraunces, serif;
+            letter-spacing: -.04em;
+            margin: 0 0 10px;
+        }
+
+        .image-panel > p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .image-panel figure {
+            margin: 0;
+            background: var(--paper);
+            border: 1px solid #d6ddd6;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-panel img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: contain;
+            background: #f5f5f1;
+            cursor: zoom-in;
+        }
+
+        .image-panel figcaption {
+            font-size: 12px;
+            line-height: 1.4;
+            color: var(--muted);
+        }
+
+        @media (max-width: 600px) {
+            .image-panel {
+                padding: 18px 14px 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,18 +72,31 @@
                 class="brand-mark">✦</span><span>Ferramentas<br><strong>do Professor</strong></span></a></header>
     <main class="detail"><a class="back" href="../index.html#ferramentas">← Todas as ferramentas</a>
         <p class="eyebrow">02 · PENDÊNCIAS DE ATIVIDADES</p>
-        <h1>Veja o que precisa de atenção.</h1>
-        <p>Uma forma simplificada de acompanhar atividades pendentes. A ferramenta ajuda a organizar a conferência e
-            reduz o tempo gasto procurando o que ficou para trás.</p>
+        <h1>Relatórios de pendências da Educação Profissional.</h1>
+        <p>Essa ferramenta foi pensada para professores do <strong>Ensino Médio Técnico</strong>, especialmente para acompanhar registros e quizzes da plataforma da <strong>Educação Profissional</strong>. O portal oferece relatórios de conclusão por disciplina, mas nem sempre é simples perceber, na prática, quantos alunos ainda não entregaram a atividade.</p>
+        <p>Com esse recurso, você transforma esses relatórios em uma visão rápida das pendências e facilita a conferência do que ainda precisa ser cobrado.</p>
+
         <section class="detail-box detail-blue">
             <div>
-                <h2>Pronta para usar</h2>
-                <p>Você não precisa instalar nada: basta abrir a ferramenta no navegador e começar.</p>
+                <h2>Como funciona</h2>
+                <p>Baixe os relatórios CSV da Educação Profissional, nomeie no padrão <strong>Turma_Disciplina_Bimestre</strong>, defina até qual semana analisar e clique em gerar relatórios.</p>
+                <p>O sistema processa os dados e baixa um arquivo compactado com planilhas em Excel das pendências por aluno.</p>
+                <p>O script de melhoria da <a href="tampermonkey.html" target="_blank" rel="noopener">página do Tampermonkey</a> gera esse botão e exporta o arquivo no formato esperado pela ferramenta.</p>
+                <p><a href="https://github.com/Hilgo/Scripts-Tampermonkey#-script-melhorias-de-navega%C3%A7%C3%A3o---educa%C3%A7%C3%A3o-profissional" target="_blank" rel="noopener">Saiba mais sobre o script ↗</a></p>
             </div>
             <div class="detail-actions"><a class="button button-primary"
                     href="https://pendencias-atividades.onrender.com/" target="_blank" rel="noopener">Abrir pendências
-                    ↗</a><a class="secondary-link" href="https://github.com/Hilgo/Pend-ncias-Atividades---Simplificada"
+                    ↗</a><a class="secondary-link" href="https://github.com/Hilgo/Pend-ncias-Atividades---Simplificada#-pend%C3%AAncias-simplificada"
                     target="_blank" rel="noopener">Ver projeto no GitHub ↗</a></div>
+        </section>
+
+        <section class="image-panel">
+            <h2>Botão de exportação do relatório</h2>
+            <p>O script cria um botão direto na página da Educação Profissional para exportar o relatório em CSV no formato que a ferramenta entende.</p>
+            <figure>
+                <img src="../assets/Exemplo%20bot%C3%A3o%20exportar%20relat%C3%B3rio.png" alt="Botão gerado pelo script para exportar relatório em CSV da Educação Profissional" class="zoomable-image" tabindex="0" role="button" aria-label="Ampliar imagem do botão de exportação do relatório" />
+                <figcaption>Exemplo do botão gerado para exportar os relatórios em CSV, já no padrão necessário para a ferramenta de pendências.</figcaption>
+            </figure>
         </section>
     </main>
     <footer><a class="brand" href="../index.html"><span class="brand-mark">✦</span><span>Ferramentas<br><strong>do
@@ -38,6 +104,28 @@
         <p>Projetos abertos para apoiar quem ensina.</p>
     </footer>
     <script src="../script.js"></script>
+    <script>
+        document.querySelectorAll('.zoomable-image').forEach((image) => {
+            const openImageDialog = () => {
+                const dialog = document.createElement('dialog');
+                dialog.className = 'image-dialog';
+                dialog.innerHTML = `<button class="image-dialog-close" aria-label="Fechar imagem ampliada">×</button><img src="${image.src}" alt="${image.alt}">`;
+                document.body.append(dialog);
+                dialog.showModal();
+                dialog.querySelector('.image-dialog-close').focus();
+                dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.remove(); });
+                dialog.querySelector('.image-dialog-close').addEventListener('click', () => dialog.remove());
+            };
+
+            image.addEventListener('click', openImageDialog);
+            image.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openImageDialog();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

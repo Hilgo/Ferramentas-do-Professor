@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scripts para o dia a dia | Ferramentas do Professor</title>
+    <title>Scripts para o navegador | Ferramentas do Professor</title>
+    <link rel="icon" type="image/png" href="../assets/icons/Icone Ferramentas do Professor.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -113,22 +114,31 @@
         .permission-images figure {
             margin: 0;
             background: var(--paper);
-            border: 1px solid #d6ddd6
+            border: 1px solid #d6ddd6;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            height: 100%
         }
 
         .permission-images img {
             display: block;
             width: 100%;
-            height: 230px;
-            object-fit: cover;
-            object-position: top
+            height: auto;
+            max-height: 240px;
+            object-fit: contain;
+            object-position: center;
+            background: #f5f5f1;
+            flex: 1 1 auto
         }
 
         .permission-images figcaption {
-            padding: 10px 12px;
+            padding: 10px 12px 0;
             font-size: 12px;
             line-height: 1.35;
-            color: var(--muted)
+            color: var(--muted);
+            margin-top: auto
         }
 
         .script-list {
@@ -251,15 +261,14 @@
             <div class="script-list">
                 <article class="script-card">
                     <h3>Lançamento de notas por planilha</h3>
-                    <p>Um código que facilita o lançamento de notas usando informações organizadas em uma planilha.</p>
+                    <p>Ajuda a lançar notas diretamente no site da Sala do Futuro usando os dados de uma planilha.</p>
                     <a class="button button-primary"
                         href="https://github.com/Hilgo/Scripts-Tampermonkey/raw/refs/heads/main/Sala%20do%20Futuro/lan%C3%A7ar_notas_planilha.user.js">Instalar
                         código ↗</a>
                 </article>
                 <article class="script-card">
-                    <h3>Melhorias do Educação Profissional</h3>
-                    <p>Um código que adiciona melhorias de navegação, inclusive para listar vários links disponíveis em
-                        uma página.</p>
+                    <h3>Melhorias da Educação Profissional</h3>
+                    <p>Melhora a navegação no portal da Educação Profissional para professores do Ensino Médio Técnico.</p>
                     <p class="tip"><strong>Dica:</strong> para abrir muitos links de uma vez em abas separadas, você
                         pode usar uma extensão como a <strong>Bulk URL Opener</strong> no Microsoft Edge.</p><a
                         class="button button-primary"
@@ -268,6 +277,67 @@
                 </article>
             </div>
         </section>
+
+        <section class="install-guide">
+            <h2>Como funciona o lançamento por planilha</h2>
+            <p>Esse script foi pensado para o ambiente da <a href="https://saladofuturoprofessor.educacao.sp.gov.br/" target="_blank" rel="noopener">Sala do Futuro</a>, especialmente na tela de <strong>Diário de Classe → Lançamento de avaliações → Editar notas</strong>. Quando ativado, ele cria um botão de <strong>Lançamento por planilha</strong> na própria interface de notas.</p>
+
+            <div class="permission-images">
+                <figure>
+                    <img src="../assets/Bot%C3%A3o%20lan%C3%A7amento%20de%20notas%20por%20planilha.png"
+                        alt="Botão de lançamento por planilha criado na tela de edição de notas da Sala do Futuro">
+                    <figcaption>O botão é inserido diretamente na página de edição de notas para facilitar o processo.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../assets/Exemplo%20de%20lan%C3%A7amento%20de%20notas%20por%20planilha.png"
+                        alt="Janela do script com espaço para colar a planilha com nome e nota">
+                    <figcaption>Ao clicar no botão, uma janela abre para você colar a planilha contendo nome e nota.</figcaption>
+                </figure>
+            </div>
+
+            <p class="permission-note"><strong>Formato esperado:</strong> a planilha deve conter apenas os dados de nome e nota, sem título na primeira linha. O script lê cada linha, identifica o aluno e aplica a nota correspondente ao nome.</p>
+
+            <p><strong>Para copiar:</strong> selecione os nomes e as notas correspondentes na planilha e copie com <strong>Ctrl + C</strong> no Windows. Depois cole na janela do script para que ele possa identificar cada aluno e aplicar a nota correta.</p>
+
+            <div class="permission-images">
+                <figure>
+                    <img src="../assets/Exemplo%20de%20lista%20para%20copiar.png"
+                        alt="Exemplo de lista com nome e nota pronta para colar no script">
+                    <figcaption>Exemplo de uma lista pronta para colar: nome da pessoa e a nota da avaliação, sem cabeçalho.</figcaption>
+                </figure>
+            </div>
+
+            <p><strong>Importante:</strong> os nomes precisam ser exatos para que a nota seja aplicada corretamente. Se houver qualquer diferença no nome, como acentos, espaços, letras maiúsculas/minúsculas ou escrita diferente, a busca não encontrará o aluno e a nota não será lançada.</p>
+        </section>
+
+        <section class="install-guide">
+            <h2>Educação Profissional: melhorias específicas para a rotina do professor</h2>
+            <p>Esse script é voltado especialmente para quem atua no <strong>Ensino Médio Técnico</strong> e usa o portal da <a href="https://educacaoprofissional.educacao.sp.gov.br/" target="_blank" rel="noopener">Educação Profissional</a> no dia a dia. Ele foi pensado para reduzir a quantidade de cliques, facilitar a navegação e criar atalhos mais diretos para informações e relatórios que costumam ser repetitivos.</p>
+            <p>Uma das principais melhorias é a exportação de relatórios em CSV: o script permite nomear a turma e fazer o download em um formato como <strong>TURMA_Disciplina_Bimestre</strong>. Esse padrão foi pensado para conversar diretamente com a ferramenta <a href="./atividades.html" target="_blank" rel="noopener">Pendências de atividades</a>, que usa esse mesmo formato para gerar relatórios agregados, organizando os dados de forma mais rápida e consistente.</p>
+            <p>Em meu repositório do GitHub, eu comento cada funcionalidade e explico como elas foram pensadas na prática: <a href="https://github.com/Hilgo/Scripts-Tampermonkey#-script-melhorias-de-navega%C3%A7%C3%A3o---educa%C3%A7%C3%A3o-profissional" target="_blank" rel="noopener">ver documentação e detalhes do script ↗</a></p>
+
+            <div class="permission-images">
+                <figure>
+                    <img src="../assets/Exemplo%20melhorias%20navega%C3%A7%C3%A3o%20disciplina.png"
+                        alt="Exemplo de melhorias de navegação na página de disciplina do portal da Educação Profissional">
+                    <figcaption>O script adiciona botões e atalhos diretamente na página de disciplina para facilitar o acesso às opções mais usadas.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../assets/links%20de%20relat%C3%B3rios%20de%20conclus%C3%A3o%20de%20atividades.png"
+                        alt="Botões de acesso rápido para relatórios e links úteis no portal da Educação Profissional">
+                    <figcaption>Também aparecem links rápidos e caminhos mais diretos para relatórios e informações essenciais.</figcaption>
+                </figure>
+            </div>
+
+            <div class="permission-images">
+                <figure>
+                    <img src="../assets/Janela%20com%20links%20diretos%20para%20relat%C3%B3rio%20de%20conclus%C3%A3o%20de%20atividades.png"
+                        alt="Janela com links diretos para relatório de conclusão de atividades no portal da Educação Profissional">
+                    <figcaption>Em alguns cenários, o script abre uma janela com links diretos para relatórios e ações frequentes, reduzindo tempo e esforço de navegação.</figcaption>
+                </figure>
+            </div>
+        </section>
+
         <p style="margin-top:35px;font-size:14px"><a class="secondary-link"
                 href="https://github.com/Hilgo/Scripts-Tampermonkey" target="_blank" rel="noopener">Ver todos os códigos
                 e o projeto no GitHub ↗</a></p>
