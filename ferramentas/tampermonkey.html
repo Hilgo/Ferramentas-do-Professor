@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripts para o dia a dia | Ferramentas do Professor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../detalhes.css">
+    <style>
+        .install-guide {
+            margin-top: 48px
+        }
+
+        .install-guide h2 {
+            font: 700 32px/1.05 Fraunces, serif;
+            letter-spacing: -.04em;
+            margin: 0 0 10px
+        }
+
+        .install-guide>p {
+            color: var(--muted);
+            line-height: 1.55
+        }
+
+        .plain-language {
+            margin-top: 30px;
+            padding: 27px 29px;
+            background: #d8ebe2;
+            border-left: 5px solid var(--orange)
+        }
+
+        .plain-language h2 {
+            font-size: 27px;
+            margin-bottom: 14px
+        }
+
+        .plain-language p {
+            margin: 8px 0;
+            line-height: 1.55
+        }
+
+        .steps {
+            display: grid;
+            gap: 14px;
+            margin-top: 25px
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+            padding: 20px 0;
+            border-top: 1px solid #d6ddd6
+        }
+
+        .step-number {
+            display: grid;
+            place-items: center;
+            flex: 0 0 31px;
+            height: 31px;
+            border-radius: 50%;
+            background: var(--orange);
+            color: white;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .step strong {
+            font-size: 16px
+        }
+
+        .step p {
+            margin: 5px 0 0;
+            color: var(--muted);
+            line-height: 1.5
+        }
+
+        .browser-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 13px
+        }
+
+        .browser-links a {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink)
+        }
+
+        .permission-note {
+            margin: 12px 0 3px;
+            padding: 15px 17px;
+            background: #fff1d0;
+            border-left: 4px solid var(--yellow);
+            font-size: 14px;
+            line-height: 1.45
+        }
+
+        .permission-images {
+            display: grid;
+            grid-template-columns: 1fr 1.55fr;
+            gap: 15px;
+            margin: 20px 0 4px
+        }
+
+        .permission-images figure {
+            margin: 0;
+            background: var(--paper);
+            border: 1px solid #d6ddd6
+        }
+
+        .permission-images img {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            object-position: top
+        }
+
+        .permission-images figcaption {
+            padding: 10px 12px;
+            font-size: 12px;
+            line-height: 1.35;
+            color: var(--muted)
+        }
+
+        .script-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 28px
+        }
+
+        .script-card {
+            padding: 25px;
+            background: #f3e3bd
+        }
+
+        .script-card h3 {
+            font: 700 22px/1.05 Fraunces, serif;
+            letter-spacing: -.03em;
+            margin: 0 0 11px
+        }
+
+        .script-card p {
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 82px
+        }
+
+        .script-card .button {
+            font-size: 13px;
+            padding: 12px 16px
+        }
+
+        .tip {
+            margin: 16px 0 0;
+            padding: 13px;
+            background: #fff8e8;
+            font-size: 13px;
+            line-height: 1.45
+        }
+
+        @media(max-width:600px) {
+
+            .script-list,
+            .permission-images {
+                grid-template-columns: 1fr
+            }
+
+            .permission-images img {
+                height: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar"><a class="brand" href="../index.html"><span
+                class="brand-mark">✦</span><span>Ferramentas<br><strong>do Professor</strong></span></a></header>
+    <main class="detail"><a class="back" href="../index.html#ferramentas">← Todas as ferramentas</a>
+        <p class="eyebrow">01 · SCRIPTS PARA O DIA A DIA</p>
+        <h1>Pequenas melhorias que fazem diferença.</h1>
+        <p>Estes recursos adicionam atalhos e melhorias a sites usados na rotina. Não é preciso saber programar para
+            usá-los.</p>
+        <section class="plain-language">
+            <h2>Antes de começar: o que são extensões e scripts?</h2>
+            <p>Uma <strong>extensão de navegador</strong> é um pequeno complemento instalado no Chrome ou Edge para
+                acrescentar uma função nova ao navegador — como se fosse instalar um aplicativo pequeno dentro dele.</p>
+            <p>O <strong>Tampermonkey</strong> é uma extensão gratuita que permite instalar e executar
+                <strong>scripts</strong>. Scripts são pequenos códigos, criados para realizar uma tarefa específica
+                automaticamente ou melhorar uma página. Aqui, eles ajudam em tarefas da rotina docente.</p>
+        </section>
+        <section class="install-guide">
+            <h2>Como instalar em 4 passos</h2>
+            <div class="steps">
+                <div class="step"><span class="step-number">1</span>
+                    <div><strong>Instale o Tampermonkey</strong>
+                        <p>Escolha o navegador que você usa e, na página que abrir, clique em “Adicionar” ou “Obter”.
+                        </p>
+                        <div class="browser-links"><a
+                                href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo"
+                                target="_blank" rel="noopener">Instalar no Google Chrome ↗</a><a
+                                href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd"
+                                target="_blank" rel="noopener">Instalar no Microsoft Edge ↗</a></div>
+                    </div>
+                </div>
+                <div class="step"><span class="step-number">2</span>
+                    <div><strong>Autorize a execução de scripts (Edge)</strong>
+                        <p>No canto superior direito do Edge, clique no ícone de extensões. Ao lado de Tampermonkey,
+                            clique nos três pontos e selecione <strong>Gerenciar extensão</strong>.</p>
+                        <div class="permission-images">
+                            <figure><img src="../assets/gerenciar%20extens%C3%A3o.png"
+                                    alt="Menu de extensões do Edge com a opção Gerenciar extensão destacada">
+                                <figcaption>Abra o menu do Tampermonkey e escolha
+                                    “Gerenciar extensão”.</figcaption>
+                            </figure>
+                            <figure><img src="../assets/Permitir%20Scripts%20de%20Usu%C3%A1rio.png"
+                                    alt="Página de configurações do Tampermonkey no Edge com Permitir Scripts de Usuário destacado">
+                                <figcaption>Ative a chave “Permitir Scripts de Usuário”.
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <p class="permission-note"><strong>Importante:</strong> nessa página, ative a opção “Permitir
+                            Scripts de Usuário”. Ela é necessária para que os scripts desta página funcionem. Instale
+                            apenas scripts de fontes em que você confia.</p>
+                    </div>
+                </div>
+                <div class="step"><span class="step-number">3</span>
+                    <div><strong>Escolha um dos scripts abaixo</strong>
+                        <p>Clique em “Instalar script”. O Tampermonkey abrirá uma tela de confirmação.</p>
+                    </div>
+                </div>
+                <div class="step"><span class="step-number">4</span>
+                    <div><strong>Confirme a instalação</strong>
+                        <p>Na tela do Tampermonkey, clique em “Instalar”. Pronto: o código será ativado quando você
+                            acessar o site correspondente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="install-guide">
+            <h2>Escolha o código de que você precisa</h2>
+            <div class="script-list">
+                <article class="script-card">
+                    <h3>Lançamento de notas por planilha</h3>
+                    <p>Um código que facilita o lançamento de notas usando informações organizadas em uma planilha.</p>
+                    <a class="button button-primary"
+                        href="https://github.com/Hilgo/Scripts-Tampermonkey/raw/refs/heads/main/Sala%20do%20Futuro/lan%C3%A7ar_notas_planilha.user.js">Instalar
+                        código ↗</a>
+                </article>
+                <article class="script-card">
+                    <h3>Melhorias do Educação Profissional</h3>
+                    <p>Um código que adiciona melhorias de navegação, inclusive para listar vários links disponíveis em
+                        uma página.</p>
+                    <p class="tip"><strong>Dica:</strong> para abrir muitos links de uma vez em abas separadas, você
+                        pode usar uma extensão como a <strong>Bulk URL Opener</strong> no Microsoft Edge.</p><a
+                        class="button button-primary"
+                        href="https://github.com/Hilgo/Scripts-Tampermonkey/raw/refs/heads/main/Educa%C3%A7%C3%A3o%20Profissional/melhorias_navegacao.user.js">Instalar
+                        código ↗</a>
+                </article>
+            </div>
+        </section>
+        <p style="margin-top:35px;font-size:14px"><a class="secondary-link"
+                href="https://github.com/Hilgo/Scripts-Tampermonkey" target="_blank" rel="noopener">Ver todos os códigos
+                e o projeto no GitHub ↗</a></p>
+    </main>
+    <footer></footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>
