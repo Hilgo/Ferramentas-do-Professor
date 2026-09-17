@@ -1,6 +1,25 @@
 const menuButton = document.querySelector('.menu-button');
 const menu = document.querySelector('#menu');
 
+const toolCards = document.querySelectorAll('.tool-card');
+toolCards.forEach((card) => {
+  const link = card.querySelector('a');
+  if (!link) return;
+
+  const goToLink = (event) => {
+    if (event && event.target.closest('a')) return;
+    window.location.href = link.href;
+  };
+
+  card.addEventListener('click', goToLink);
+  card.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      goToLink(event);
+    }
+  });
+});
+
 const root = document.documentElement;
 const savedFontSize = Number(localStorage.getItem('font-size-adjustment')) || 0;
 const savedContrast = localStorage.getItem('high-contrast') === 'true';
@@ -10,12 +29,12 @@ if (siteFooter) {
   siteFooter.className = 'site-footer';
   siteFooter.setAttribute('aria-label', 'Contato');
   siteFooter.innerHTML = `
-    <div><a class="brand" href="${location.pathname.includes('/ferramentas/') ? '../index.html' : '#inicio'}"><span class="brand-mark" aria-hidden="true">✦</span><span>Ferramentas<br><strong>do Professor</strong></span></a><p>Projetos abertos para apoiar quem ensina.</p></div>
+    <div><a class="brand" href="${location.pathname.includes('/ferramentas/') ? '../index.html' : '#inicio'}"><img class="brand-mark" src="${location.pathname.includes('/ferramentas/') ? '../assets/icons/Icone Ferramentas do Professor.png' : 'assets/icons/Icone Ferramentas do Professor.png'}" alt="" aria-hidden="true"><span>Ferramentas<br><strong>do Professor</strong></span></a><p>Projetos abertos para apoiar quem ensina.</p></div>
     <div><p class="footer-title">PERFIS</p><div class="footer-links"><a href="https://github.com/Hilgo/" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/lucas-palma-stabile" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
     <div><p class="footer-title">CONTATO</p><div class="footer-links"><a href="mailto:lucasstabile@professor.educacao.sp.gov.br">lucasstabile@professor.educacao.sp.gov.br</a></div></div>`;
 
   const footerStyle = document.createElement('style');
-  footerStyle.textContent = `.site-footer{max-width:none;background:var(--ink);color:var(--cream);padding:55px max(32px,calc((100% - 1136px)/2));display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:35px;align-items:start}.site-footer .brand,.site-footer a{color:var(--cream)}.site-footer .brand-mark{background:var(--orange)}.site-footer p{margin:12px 0 0;color:#b8cdc6;font-size:14px;line-height:1.5}.footer-title{margin:0 0 13px!important;color:#b8cdc6!important;font-size:11px!important;font-weight:700;letter-spacing:.13em}.footer-links{display:grid;gap:11px}.footer-links a{font-size:14px;font-weight:600;text-decoration:none;word-break:break-word}.footer-links a:hover{text-decoration:underline}@media(max-width:720px){.site-footer{padding:45px 24px;grid-template-columns:1fr;gap:28px}}`;
+  footerStyle.textContent = `.site-footer{max-width:none;background:var(--ink);color:var(--cream);padding:55px max(32px,calc((100% - 1136px)/2));display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:35px;align-items:start}.site-footer .brand,.site-footer a{color:var(--cream)}.site-footer .brand-mark{background:var(--cream);padding:2px;border-radius:12px;width:35px;height:35px;object-fit:cover}.site-footer p{margin:12px 0 0;color:#b8cdc6;font-size:14px;line-height:1.5}.footer-title{margin:0 0 13px!important;color:#b8cdc6!important;font-size:11px!important;font-weight:700;letter-spacing:.13em}.footer-links{display:grid;gap:11px}.footer-links a{font-size:14px;font-weight:600;text-decoration:none;word-break:break-word}.footer-links a:hover{text-decoration:underline}@media(max-width:720px){.site-footer{padding:45px 24px;grid-template-columns:1fr;gap:28px}}`;
   document.head.append(footerStyle);
 }
 

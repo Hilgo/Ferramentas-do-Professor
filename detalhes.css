@@ -58,16 +58,45 @@
 .secondary-link {
     font-size: 13px;
     font-weight: 700;
-    color: var(--ink)
+    color: var(--ink);
+    transition: opacity .2s ease, transform .2s ease, text-decoration-color .2s ease;
+}
+
+.secondary-link:hover,
+.secondary-link:focus-visible,
+.back:hover,
+.back:focus-visible {
+    opacity: .9;
+    transform: translateY(-1px);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .back {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-size: 14px;
-    color: var(--ink);
-    font-weight: 700;
+    color: var(--cream);
+    background: var(--ink);
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 999px;
+    padding: 12px 16px;
     text-decoration: none;
-    display: inline-block;
-    margin-bottom: 65px
+    font-weight: 700;
+    box-shadow: 0 14px 30px rgba(25, 58, 59, .2);
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.back:hover,
+.back:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(25, 58, 59, .22);
+    background: #263f40;
 }
 
 .zoomable-image {
@@ -125,5 +154,11 @@
 
     .detail-actions {
         margin-top: 5px
+    }
+
+    .back {
+        right: 16px;
+        bottom: 16px;
+        padding: 10px 14px;
     }
 }

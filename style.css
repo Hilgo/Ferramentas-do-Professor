@@ -63,14 +63,14 @@ footer {
 }
 
 .brand-mark {
-    display: grid;
-    place-items: center;
+    display: block;
     width: 35px;
     height: 35px;
-    border-radius: 50%;
-    background: var(--orange);
-    color: white;
-    font-size: 20px
+    border-radius: 12px;
+    object-fit: cover;
+    background: #fff;
+    padding: 2px;
+    flex-shrink: 0
 }
 
 nav {
@@ -90,7 +90,16 @@ footer>a:not(.brand) {
 .nav-github {
     border: 1px solid #bfd0c9;
     border-radius: 99px;
-    padding: 11px 16px
+    padding: 11px 16px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+
+.nav-github:hover,
+.nav-github:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--orange);
+    box-shadow: 0 8px 18px rgba(25, 58, 59, .08);
+    background: rgba(239, 113, 87, .04);
 }
 
 .header-actions {
@@ -112,7 +121,18 @@ footer>a:not(.brand) {
     border-radius: 5px;
     padding: 5px 8px;
     font: 700 12px "DM Sans", sans-serif;
-    cursor: pointer
+    cursor: pointer;
+    transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.accessibility-controls button:hover,
+.accessibility-controls button:focus-visible,
+.menu-button:hover,
+.menu-button:focus-visible {
+    transform: translateY(-1px);
+    border-color: var(--orange);
+    background: rgba(239, 113, 87, .04);
+    box-shadow: 0 8px 18px rgba(25, 58, 59, .08);
 }
 
 .accessibility-controls button:focus-visible,
@@ -127,7 +147,8 @@ footer>a:not(.brand) {
     background: transparent;
     color: var(--ink);
     font: inherit;
-    font-weight: 700
+    font-weight: 700;
+    transition: transform .2s ease, color .2s ease;
 }
 
 .hero {
@@ -188,7 +209,17 @@ em {
     border-radius: 99px;
     padding: 15px 21px;
     font-weight: 700;
-    font-size: 14px
+    font-size: 14px;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+    box-shadow: 0 0 0 rgba(25, 58, 59, 0);
+}
+
+.button:hover,
+.button:focus-visible,
+.text-link:hover,
+.text-link:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(25, 58, 59, .12);
 }
 
 .button-primary {
@@ -196,11 +227,27 @@ em {
     background: var(--ink)
 }
 
+.button-primary:hover,
+.button-primary:focus-visible {
+    background: #243e40;
+}
+
+.button-light {
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.button-light:hover,
+.button-light:focus-visible {
+    background: #fff;
+    color: var(--ink);
+}
+
 .text-link {
     color: var(--ink);
     font-size: 14px;
     font-weight: 700;
-    text-decoration: none
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
 }
 
 .hero-art {
@@ -352,7 +399,22 @@ em {
     padding: 26px 27px;
     display: flex;
     flex-direction: column;
-    border-radius: 3px
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    box-shadow: 0 0 0 rgba(25, 58, 59, 0);
+}
+
+.tool-card:hover,
+.tool-card:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 32px rgba(25, 58, 59, .12);
+    filter: saturate(1.03);
+}
+
+.tool-card:focus-visible {
+    outline: 3px solid rgba(239, 113, 87, .9);
+    outline-offset: 4px;
 }
 
 .tool-sand {
@@ -559,6 +621,12 @@ em {
 footer {
     padding-top: 35px;
     padding-bottom: 35px
+}
+
+footer .brand-mark {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 2px;
 }
 
 footer p {
