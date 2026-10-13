@@ -748,7 +748,9 @@ footer p {
     .callout {
         padding: 75px 24px
     }
-
+    .site-footer{
+        padding-bottom: 80px; /* Adiciona espaço extra para evitar sobreposição */
+    }
     footer {
         flex-wrap: wrap;
         gap: 15px

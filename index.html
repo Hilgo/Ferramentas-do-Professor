@@ -1,110 +1,257 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ferramentas simples para reduzir tarefas repetitivas da rotina docente." />
-    <title>Ferramentas do Professor</title>
-    <link rel="icon" type="image/png" href="assets/icons/Icone Ferramentas do Professor.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      .about-section{max-width:1060px;margin:auto;padding:105px 32px;display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:start}.about-section h2{font-size:clamp(39px,4vw,52px)}.about-copy>p:not(.eyebrow){font-size:17px;line-height:1.65;color:var(--muted);max-width:620px}.independence-note{margin-top:28px;padding:19px 21px;background:#fff1d0;border-left:4px solid var(--orange);font-size:14px;line-height:1.5}.site-footer{max-width:none;background:var(--ink);color:var(--cream);padding:55px max(32px,calc((100% - 1136px)/2));display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:35px;align-items:start}.site-footer .brand,.site-footer a{color:var(--cream)}.site-footer .brand-mark{background:var(--cream)}.site-footer p{margin:12px 0 0;color:#b8cdc6;font-size:14px;line-height:1.5}.footer-title{margin:0 0 13px;color:#b8cdc6;font-size:11px;font-weight:700;letter-spacing:.13em}.footer-links{display:grid;gap:11px}.footer-links a{font-size:14px;font-weight:600;text-decoration:none;word-break:break-word}.footer-links a:hover{text-decoration:underline}@media(max-width:720px){.about-section{padding:75px 24px;grid-template-columns:1fr;gap:28px}.site-footer{padding:45px 24px;grid-template-columns:1fr;gap:28px}}
-      .how-copy li p a{color:var(--ink);font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
-    </style>
-  </head>
-  <body>
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <header class="topbar">
-      <a class="brand" href="#inicio" aria-label="Ferramentas do Professor - início">
-        <img class="brand-mark" src="assets/icons/Icone Ferramentas do Professor.png" alt="" aria-hidden="true" />
-        <span>Ferramentas<br /><strong>do Professor</strong></span>
-      </a>
-      <div class="header-actions">
-        <div class="accessibility-controls" aria-label="Opções de acessibilidade">
-          <button type="button" data-font="decrease" aria-label="Diminuir tamanho do texto">A−</button>
-          <button type="button" data-font="increase" aria-label="Aumentar tamanho do texto">A+</button>
-          <button type="button" data-contrast aria-pressed="false">Alto contraste</button>
-        </div>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ferramentas simples para reduzir tarefas repetitivas da rotina docente." />
+  <title>Ferramentas do Professor</title>
+  <link rel="icon" type="image/png" href="assets/icons/Icone Ferramentas do Professor.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-section {
+      max-width: 1060px;
+      margin: auto;
+      padding: 105px 32px;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 90px;
+      align-items: start
+    }
+
+    .about-section h2 {
+      font-size: clamp(39px, 4vw, 52px)
+    }
+
+    .about-copy>p:not(.eyebrow) {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 620px
+    }
+
+    .independence-note {
+      margin-top: 28px;
+      padding: 19px 21px;
+      background: #fff1d0;
+      border-left: 4px solid var(--orange);
+      font-size: 14px;
+      line-height: 1.5
+    }
+
+    .site-footer {
+      max-width: none;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 55px max(32px, calc((100% - 1136px)/2));
+      display: grid;
+      grid-template-columns: 1.1fr .9fr .9fr;
+      gap: 35px;
+      align-items: start
+    }
+
+    .site-footer .brand,
+    .site-footer a {
+      color: var(--cream)
+    }
+
+    .site-footer .brand-mark {
+      background: var(--cream)
+    }
+
+    .site-footer p {
+      margin: 12px 0 0;
+      color: #b8cdc6;
+      font-size: 14px;
+      line-height: 1.5
+    }
+
+    .footer-title {
+      margin: 0 0 13px;
+      color: #b8cdc6;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .13em
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 11px
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-word
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline
+    }
+
+    @media(max-width:720px) {
+      .about-section {
+        padding: 75px 24px;
+        grid-template-columns: 1fr;
+        gap: 28px
+      }
+
+      .site-footer {
+        padding: 45px 24px;
+        grid-template-columns: 1fr;
+        padding-bottom: 80px; /* Adiciona espaço extra para evitar sobreposição */
+        gap: 28px
+      }
+    }
+
+    .how-copy li p a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Ferramentas do Professor - início">
+      <img class="brand-mark" src="assets/icons/Icone Ferramentas do Professor.png" alt="" aria-hidden="true" />
+      <span>Ferramentas<br /><strong>do Professor</strong></span>
+    </a>
+    <div class="header-actions">
+      <div class="accessibility-controls" aria-label="Opções de acessibilidade">
+        <button type="button" data-font="decrease" aria-label="Diminuir tamanho do texto">A−</button>
+        <button type="button" data-font="increase" aria-label="Aumentar tamanho do texto">A+</button>
+        <button type="button" data-contrast aria-pressed="false">Alto contraste</button>
       </div>
-      <nav id="menu" aria-label="Navegação principal">
-        <a href="#ferramentas">Ferramentas</a>
-        <a href="#como-usar">Como usar</a>
-        <a href="#sobre">Sobre</a>
-        <a class="nav-github" href="https://github.com/Hilgo/Ferramentas-do-Professor" target="_blank" rel="noopener">Ver no GitHub <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+    <nav id="menu" aria-label="Navegação principal">
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#como-usar">Como usar</a>
+      <a href="#sobre">Sobre</a>
+      <a class="nav-github" href="https://github.com/Hilgo/Ferramentas-do-Professor" target="_blank" rel="noopener">Ver
+        no GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-    <main id="conteudo">
-      <section class="hero" id="inicio">
-        <div class="hero-copy">
-          <p class="eyebrow">RECURSOS PARA A ROTINA DOCENTE</p>
-          <h1>Mais tempo para<br /><em>ensinar.</em></h1>
-          <p class="hero-text">Pequenas ferramentas criadas por um professor para simplificar tarefas administrativas e deixar espaço para o que importa: os alunos e a aula.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#ferramentas">Conhecer as ferramentas <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="#como-usar">Como começar <span aria-hidden="true">→</span></a>
-          </div>
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">RECURSOS PARA A ROTINA DOCENTE</p>
+        <h1>Mais tempo para<br /><em>ensinar.</em></h1>
+        <p class="hero-text">Pequenas ferramentas criadas por um professor para simplificar tarefas administrativas e
+          deixar espaço para o que importa: os alunos e a aula.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#ferramentas">Conhecer as ferramentas <span
+              aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#como-usar">Como começar <span aria-hidden="true">→</span></a>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div><div class="arch"></div>
-          <div class="paper paper-main"><span>PLANEJAR</span><i></i><i></i><i></i><b>Uma aula de cada vez.</b></div>
-          <div class="paper paper-note">feito para<br /><strong>professores</strong> <span>✦</span></div>
-          <div class="pencil"></div>
-        </div>
-      </section>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="arch"></div>
+        <div class="paper paper-main"><span>PLANEJAR</span><i></i><i></i><i></i><b>Uma aula de cada vez.</b></div>
+        <div class="paper paper-note">feito para<br /><strong>professores</strong> <span>✦</span></div>
+        <div class="pencil"></div>
+      </div>
+    </section>
 
-      <section class="tools-section" id="ferramentas">
-        <div class="section-heading">
-          <div><p class="eyebrow">O QUE VOCÊ ENCONTRA AQUI</p><h2>Uma ajuda prática<br />para cada etapa.</h2></div>
-          <p>Ferramentas gratuitas, com código aberto e pensadas a partir de necessidades reais da sala de aula, incluindo pequenos ajustes para o navegador.</p>
+    <section class="tools-section" id="ferramentas">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">O QUE VOCÊ ENCONTRA AQUI</p>
+          <h2>Uma ajuda prática<br />para cada etapa.</h2>
         </div>
-        <div class="tools-grid">
-          <article class="tool-card tool-sand" tabindex="0" aria-label="Abrir recursos de scripts para o navegador">
-            <div class="tool-icon">⌘</div><p class="card-number">01</p>
-            <h3>Scripts para<br />o navegador</h3>
-            <p>Pequenas automatizações para facilitar o uso de sites e sistemas no dia a dia.</p>
-            <a href="ferramentas/tampermonkey.html">Ver recursos <span>→</span></a>
-          </article>
-          <article class="tool-card tool-blue" tabindex="0" aria-label="Abrir recurso de pendências de atividades">
-            <div class="tool-icon">⌑</div><p class="card-number">02</p>
-            <h3>Pendências<br />de atividades</h3>
-            <p>Veja rapidamente o que ainda precisa ser revisado ou cobrado.</p>
-            <a href="ferramentas/atividades.html">Abrir recurso <span>→</span></a>
-          </article>
-          <article class="tool-card tool-coral" tabindex="0" aria-label="Abrir recurso de planejamento semanal">
-            <div class="tool-icon">✎</div><p class="card-number">03</p>
-            <h3>Planejamento<br />semanal</h3>
-            <p>Organize uma base para o planejamento e adapte ao contexto da sua turma.</p>
-            <a href="ferramentas/planejamento.html">Abrir recurso <span>→</span></a>
-          </article>
-        </div>
-      </section>
+        <p>Ferramentas gratuitas, com código aberto e pensadas a partir de necessidades reais da sala de aula, incluindo
+          pequenos ajustes para o navegador.</p>
+      </div>
+      <div class="tools-grid">
+        <article class="tool-card tool-sand" tabindex="0" aria-label="Abrir recursos de scripts para o navegador">
+          <div class="tool-icon">⌘</div>
+          <p class="card-number">01</p>
+          <h3>Scripts para<br />o navegador</h3>
+          <p>Pequenas automatizações para facilitar o uso de sites e sistemas no dia a dia.</p>
+          <a href="ferramentas/tampermonkey.html">Ver recursos <span>→</span></a>
+        </article>
+        <article class="tool-card tool-blue" tabindex="0" aria-label="Abrir recurso de pendências de atividades">
+          <div class="tool-icon">⌑</div>
+          <p class="card-number">02</p>
+          <h3>Pendências<br />de atividades</h3>
+          <p>Veja rapidamente o que ainda precisa ser revisado ou cobrado.</p>
+          <a href="ferramentas/atividades.html">Abrir recurso <span>→</span></a>
+        </article>
+        <article class="tool-card tool-coral" tabindex="0" aria-label="Abrir recurso de planejamento semanal">
+          <div class="tool-icon">✎</div>
+          <p class="card-number">03</p>
+          <h3>Planejamento<br />semanal</h3>
+          <p>Organize uma base para o planejamento e adapte ao contexto da sua turma.</p>
+          <a href="ferramentas/planejamento.html">Abrir recurso <span>→</span></a>
+        </article>
+      </div>
+    </section>
 
-      <section class="how-section" id="como-usar">
-        <div class="how-illustration" aria-hidden="true"><span class="spark one">✦</span><span class="spark two">✦</span><div class="plant"><i></i><i></i><i></i></div><div class="book">COMECE<br />POR AQUI</div></div>
-        <div class="how-copy"><p class="eyebrow">SEM COMPLICAÇÃO</p><h2>Comece no seu ritmo.</h2><ol>
-          <li><span>1</span><div><strong>Escolha o que você precisa</strong><p>Comece pela tarefa que hoje mais toma o seu tempo.</p></div></li>
-          <li><span>2</span><div><strong>Abra a ferramenta ou siga o guia</strong><p><a href="ferramentas/atividades.html">Pendências</a> e <a href="ferramentas/planejamento.html">Planejamento</a> já estão prontos para usar. Para os <a href="ferramentas/tampermonkey.html">scripts</a>, a página explica cada etapa da instalação.</p></div></li>
-          <li><span>3</span><div><strong>Use no seu contexto</strong><p>Adapte os resultados à sua turma, à sua escola e à sua rotina.</p></div></li>
-        </ol></div>
-      </section>
+    <section class="how-section" id="como-usar">
+      <div class="how-illustration" aria-hidden="true"><span class="spark one">✦</span><span class="spark two">✦</span>
+        <div class="plant"><i></i><i></i><i></i></div>
+        <div class="book">COMECE<br />POR AQUI</div>
+      </div>
+      <div class="how-copy">
+        <p class="eyebrow">SEM COMPLICAÇÃO</p>
+        <h2>Comece no seu ritmo.</h2>
+        <ol>
+          <li><span>1</span>
+            <div><strong>Escolha o que você precisa</strong>
+              <p>Comece pela tarefa que hoje mais toma o seu tempo.</p>
+            </div>
+          </li>
+          <li><span>2</span>
+            <div><strong>Abra a ferramenta ou siga o guia</strong>
+              <p><a href="ferramentas/atividades.html">Pendências</a> e <a
+                  href="ferramentas/planejamento.html">Planejamento</a> já estão prontos para usar. Para os <a
+                  href="ferramentas/tampermonkey.html">scripts</a>, a página explica cada etapa da instalação.</p>
+            </div>
+          </li>
+          <li><span>3</span>
+            <div><strong>Use no seu contexto</strong>
+              <p>Adapte os resultados à sua turma, à sua escola e à sua rotina.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-      <section class="about-section" id="sobre">
-        <div><p class="eyebrow">SOBRE O PROJETO</p><h2>Sobre as ferramentas</h2></div>
-        <div class="about-copy">
-          <p>O <strong>Ferramentas do Professor</strong> reúne pequenos projetos desenvolvidos para facilitar tarefas do cotidiano docente, especialmente atividades relacionadas à organização, planejamento e acompanhamento dos estudantes.</p>
-          <p>Os projetos são gratuitos e independentes, desenvolvidos para uso educacional.</p>
-          <p class="independence-note"><strong>As ferramentas não possuem vínculo oficial com a Secretaria da Educação.</strong></p>
-        </div>
-      </section>
+    <section class="about-section" id="sobre">
+      <div>
+        <p class="eyebrow">SOBRE O PROJETO</p>
+        <h2>Sobre as ferramentas</h2>
+      </div>
+      <div class="about-copy">
+        <p>O <strong>Ferramentas do Professor</strong> reúne pequenos projetos desenvolvidos para facilitar tarefas do
+          cotidiano docente, especialmente atividades relacionadas à organização, planejamento e acompanhamento dos
+          estudantes.</p>
+        <p>Os projetos são gratuitos e independentes, desenvolvidos para uso educacional.</p>
+        <p class="independence-note"><strong>As ferramentas não possuem vínculo oficial com a Secretaria da
+            Educação.</strong></p>
+      </div>
+    </section>
 
-      <section class="callout"><p>TECNOLOGIA A SERVIÇO DO ENSINO</p><h2>Menos cliques.<br /><em>Mais presença.</em></h2><a class="button button-light" href="#ferramentas">Ver ferramentas <span aria-hidden="true">↑</span></a></section>
-    </main>
-    <footer class="site-footer" aria-label="Contato"></footer>
-    <script src="script.js"></script>
-  </body>
+    <section class="callout">
+      <p>TECNOLOGIA A SERVIÇO DO ENSINO</p>
+      <h2>Menos cliques.<br /><em>Mais presença.</em></h2><a class="button button-light" href="#ferramentas">Ver
+        ferramentas <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
+  <footer class="site-footer" aria-label="Contato"></footer>
+  <script src="script.js"></script>
+</body>
+
 </html>
